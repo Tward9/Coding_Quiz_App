@@ -45,49 +45,249 @@ function firstQuestion() {
     choice1.addEventListener("click", function () {
         if (choice1 === correctAnswer) {
             console.log("Correct!");
-            //question 2 function
+            secondQuestion();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
             countdown = countdown - 5;
-            //question 2 function
+            secondQuestion();
         }
     })
     choice2.addEventListener("click",function () {
         if (choice2 === correctAnswer) {
             console.log("Correct!");
-            //question 2 function
+            secondQuestion();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
             countdown = countdown - 5;
-            //question 2 function
+            secondQuestion();
         }
     })
     choice3.addEventListener("click",function () {
         if (choice3 === correctAnswer) {
             console.log("Correct!");
-            //question 2 function
+            secondQuestion();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
             countdown = countdown - 5;
-            //question 2 function
+            secondQuestion();
         }
     })
     choice4.addEventListener("click",function () {
         if (choice4 === correctAnswer) {
             console.log("Correct!");
-            //question 2 function
+            secondQuestion();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
             countdown = countdown - 5;
-            //question 2 function
+            secondQuestion();
         }
     })
 }
 
 //question 2 function
+function secondQuestion() {
+    quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
+    choice1.textContent = "lorem";
+    choice2.textContent = "amet";
+    choice3.textContent = "adipisicing";
+    choice4.textContent = "sit";
+    var correctAnswer = choice2;
+
+    //functions for clicking answers
+    choice1.addEventListener("click", function () {
+        if (choice1 === correctAnswer) {
+            console.log("Correct!");
+            thirdQuestion();
+        }else{
+            console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
+            countdown = countdown - 5;
+            thirdQuestion();
+        }
+    })
+    choice2.addEventListener("click",function () {
+        if (choice2 === correctAnswer) {
+            console.log("Correct!");
+            thirdQuestion();
+        }else{
+            console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
+            countdown = countdown - 5;
+            thirdQuestion();
+        }
+    })
+    choice3.addEventListener("click",function () {
+        if (choice3 === correctAnswer) {
+            console.log("Correct!");
+            thirdQuestion();
+        }else{
+            console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
+            countdown = countdown - 5;
+            thirdQuestion();
+        }
+    })
+    choice4.addEventListener("click",function () {
+        if (choice4 === correctAnswer) {
+            console.log("Correct!");
+            thirdQuestion();
+        }else{
+            console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
+            countdown = countdown - 5;
+            thirdQuestion();
+        }
+    })
+}
 //question 3
+function thirdQuestion() {
+    quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
+    choice1.textContent = "dolor";
+    choice2.textContent = "ipsum";
+    choice3.textContent = "consectetur";
+    choice4.textContent = "elit";
+    var correctAnswer = choice2;
+
+    //functions for clicking answers
+    choice1.addEventListener("click", function () {
+        if (choice1 === correctAnswer) {
+            console.log("Correct!");
+            fourthQuestion();
+        }else{
+            console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
+            countdown = countdown - 5;
+            fourthQuestion();
+        }
+    })
+    choice2.addEventListener("click",function () {
+        if (choice2 === correctAnswer) {
+            console.log("Correct!");
+            fourthQuestion();
+        }else{
+            console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
+            countdown = countdown - 5;
+            fourthQuestion();
+        }
+    })
+    choice3.addEventListener("click",function () {
+        if (choice3 === correctAnswer) {
+            console.log("Correct!");
+            fourthQuestion();
+        }else{
+            console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
+            countdown = countdown - 5;
+            fourthQuestion();
+        }
+    })
+    choice4.addEventListener("click",function () {
+        if (choice4 === correctAnswer) {
+            console.log("Correct!");
+            fourthQuestion();
+        }else{
+            console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
+            countdown = countdown - 5;
+            fourthQuestion();
+        }
+    })
+}
 //question 4
+function fourthQuestion() {
+    quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
+    choice1.textContent = "elit";
+    choice2.textContent = "adipisicing";
+    choice3.textContent = "consectetur";
+    choice4.textContent = "amet";
+    var correctAnswer = choice2;
+
+    //functions for clicking answers
+    choice1.addEventListener("click", function () {
+        if (choice1 === correctAnswer) {
+            console.log("Correct!");
+            fifthQuestion();
+        }else{
+            console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
+            countdown = countdown - 5;
+            fifthQuestion();
+        }
+    })
+    choice2.addEventListener("click",function () {
+        if (choice2 === correctAnswer) {
+            console.log("Correct!");
+            fifthQuestion();
+        }else{
+            console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
+            countdown = countdown - 5;
+            fifthQuestion();
+        }
+    })
+    choice3.addEventListener("click",function () {
+        if (choice3 === correctAnswer) {
+            console.log("Correct!");
+            fifthQuestion();
+        }else{
+            console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
+            countdown = countdown - 5;
+            fifthQuestion();
+        }
+    })
+    choice4.addEventListener("click",function () {
+        if (choice4 === correctAnswer) {
+            console.log("Correct!");
+            fifthQuestion();
+        }else{
+            console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
+            countdown = countdown - 5;
+            fifthQuestion();
+        }
+    })
+}
 //question 5
+function fifthQuestion() {
+    quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
+    choice1.textContent = "sit";
+    choice2.textContent = "dolor";
+    choice3.textContent = "ipsem";
+    choice4.textContent = "lorem";
+    var correctAnswer = choice2;
+
+    //functions for clicking answers
+    choice1.addEventListener("click", function () {
+        if (choice1 === correctAnswer) {
+            console.log("Correct!");
+            quizComplete();
+        }else{
+            console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
+            countdown = countdown - 5;
+            quizComplete();
+        }
+    })
+    choice2.addEventListener("click",function () {
+        if (choice2 === correctAnswer) {
+            console.log("Correct!");
+            quizComplete();
+        }else{
+            console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
+            countdown = countdown - 5;
+            quizComplete();
+        }
+    })
+    choice3.addEventListener("click",function () {
+        if (choice3 === correctAnswer) {
+            console.log("Correct!");
+            quizComplete();
+        }else{
+            console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
+            countdown = countdown - 5;
+            quizComplete();
+        }
+    })
+    choice4.addEventListener("click",function () {
+        if (choice4 === correctAnswer) {
+            console.log("Correct!");
+            quizComplete();
+        }else{
+            console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
+            countdown = countdown - 5;
+            quizComplete();
+        }
+    })
+}
 //answered final question or timer hits zero, end game
 //quiz complete function
 function quizComplete() {
