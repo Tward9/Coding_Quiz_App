@@ -27,6 +27,8 @@ startButton.addEventListener("click", function () {
     }, 1000);
 })
 //present question function
+//question answered, present next question
+//question incorect, subtract remaining time from timer
 function firstQuestion() {
     quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
     choice1.style.display = "block";
@@ -83,7 +85,6 @@ function firstQuestion() {
         }
     })
 }
-
 //question 2 function
 function secondQuestion() {
     quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
@@ -303,10 +304,6 @@ function timesUp() {
     quizArea.textContent = "Time Has Run Out!"
     //go to intial input function
 }
-
-//question answered, present next question
-
-//question incorect, subtract remaining time from timer
 
 //enter intials, save score
 
