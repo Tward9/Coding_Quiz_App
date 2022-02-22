@@ -8,6 +8,7 @@ var choice2 = document.querySelector("#choice2");
 var choice3 = document.querySelector("#choice3");
 var choice4 = document.querySelector("#choice4");
 var countdown = 10;
+var scoreButton = document.querySelector("#scoreButton");
 
 //when start button pressed, start timer, present first question
 startButton.addEventListener("click", function () {
@@ -16,7 +17,7 @@ startButton.addEventListener("click", function () {
     console.log("next questions");
     //timer 
     timerEl = setInterval (function () {
-        if (countdown === 0) {
+        if (countdown <= 0) {
             console.log("Time Has Run Out");
             //times up function
             timesUp();
@@ -295,18 +296,55 @@ function quizComplete() {
     clearInterval(timerEl);
     timer.textContent = "";
     quizArea.textContent = "Quiz Complete!"
-    //go to intial input function
+    subtitle.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptatibus tempore amet vitae unde vero reiciendis, temporibus, provident dolorum at odit officia omnis iste perspiciatis quis recusandae eligendi facilis. Qui!"
+    choice1.style.display = "none";
+    choice2.style.display = "none";
+    choice3.style.display = "none";
+    choice4.style.display = "none";
+    scoreButton.style.display = "block";
+    scoreButton.textContent = "Go to Score Screen";
+    scoreButton.addEventListener("click", function(){
+        console.log("going to score screen");
+        //go to intial input function
+        logInitial;
+    })
 }
 //times up funtion
 function timesUp() {
     clearInterval(timerEl);
     timer.textContent = "";
     quizArea.textContent = "Time Has Run Out!"
-    //go to intial input function
+    subtitle.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptatibus tempore amet vitae unde vero reiciendis, temporibus, provident dolorum at odit officia omnis iste perspiciatis quis recusandae eligendi facilis. Qui!"
+    choice1.style.display = "none";
+    choice2.style.display = "none";
+    choice3.style.display = "none";
+    choice4.style.display = "none";
+    scoreButton.style.display = "block";
+    scoreButton.textContent = "Go to Score Screen";
+    scoreButton.addEventListener("click", function(){
+        console.log("going to score screen");
+        //go to intial input function
+        logInitial;
+    });
 }
-
 //enter intials, save score
-
+//key press event not looping to fill initials array
+function keyPress(event){
+    event.preventDefault();
+    console.log(event);
+    var key = event.key;
+    console.log(key);
+    return key;
+}
+document.onkeydown = keyPress;
+function logInitial() {
+    var intials = Array(3);
+    for ( i = 0; i < intials.length; i++) {
+        intials[i] = keyPress;
+        console.log(intials);
+        return intials
+    }
+}
 //retain high scores (local storage)
 
 //clear scores button
