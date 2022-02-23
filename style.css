@@ -19,3 +19,9 @@
 #initialsPrompt{
     display: none;
 }
+#scoreList{
+    list-style-type: none;
+}
+#restartButton{
+    display: none;
+}

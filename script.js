@@ -7,11 +7,13 @@ var choice1 = document.querySelector("#choice1");
 var choice2 = document.querySelector("#choice2");
 var choice3 = document.querySelector("#choice3");
 var choice4 = document.querySelector("#choice4");
-var countdown = 10;
 var scoreButton = document.querySelector("#scoreButton");
 var initialsInput = document.querySelector("#initialsInput");
 var saveButton = document.querySelector("#saveButton");
 var initialsPrompt = document.querySelector("#initialsPrompt");
+var scoreList = document.querySelector('#scoreList');
+var restartButton = document.querySelector('#restartButton');
+var countdown = 1000;
 
 //when start button pressed, start timer, present first question
 startButton.addEventListener("click", function () {
@@ -34,6 +36,7 @@ startButton.addEventListener("click", function () {
 //question answered, present next question
 //question incorect, subtract remaining time from timer
 function firstQuestion() {
+    console.log('first questions');
     quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
     choice1.style.display = "block";
     choice1.textContent = "lorem";
@@ -45,44 +48,52 @@ function firstQuestion() {
     choice4.style.display = "block";
     startButton.textContent = "";
     startButton.style.display = "none";
-    var correctAnswer = choice2;
+    var correctAnswer = choice1;
 
     //functions for clicking answers
-    choice1.addEventListener("click", function () {
+    choice1.addEventListener("click", function (event) {
         if (choice1 === correctAnswer) {
+            event.stopPropagation();
             console.log("Correct!");
             secondQuestion();
         }else{
+            event.stopPropagation();
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
             countdown = countdown - 5;
             secondQuestion();
         }
     })
-    choice2.addEventListener("click",function () {
+    choice2.addEventListener("click",function (event) {
         if (choice2 === correctAnswer) {
+            event.stopPropagation();
             console.log("Correct!");
             secondQuestion();
         }else{
+            event.stopPropagation();
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
             countdown = countdown - 5;
             secondQuestion();
         }
     })
-    choice3.addEventListener("click",function () {
+    choice3.addEventListener("click",function (event) {
         if (choice3 === correctAnswer) {
+            event.stopPropagation();
             console.log("Correct!");
             secondQuestion();
         }else{
+            event.stopPropagation();
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
             countdown = countdown - 5;
             secondQuestion();
         }
     })
-    choice4.addEventListener("click",function () {
+    choice4.addEventListener("click",function (event) {
         if (choice4 === correctAnswer) {
+            event.stopPropagation();
             console.log("Correct!");
             secondQuestion();
         }else{
+            event.stopPropagation();
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
             countdown = countdown - 5;
             secondQuestion();
@@ -91,6 +102,7 @@ function firstQuestion() {
 }
 //question 2 function
 function secondQuestion() {
+    console.log('second questions');
     quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
     choice1.textContent = "lorem";
     choice2.textContent = "amet";
@@ -101,7 +113,7 @@ function secondQuestion() {
     //functions for clicking answers
     choice1.addEventListener("click", function () {
         if (choice1 === correctAnswer) {
-            console.log("Correct!");
+            console.log("Question 2 Correct!");
             thirdQuestion();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
@@ -109,10 +121,11 @@ function secondQuestion() {
             thirdQuestion();
         }
     })
-    choice2.addEventListener("click",function () {
+    choice2.addEventListener("click",function (event) {
         if (choice2 === correctAnswer) {
-            console.log("Correct!");
+            console.log("Question 2 Correct!");
             thirdQuestion();
+            // event.stopImmediatePropagation();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
             countdown = countdown - 5;
@@ -121,7 +134,7 @@ function secondQuestion() {
     })
     choice3.addEventListener("click",function () {
         if (choice3 === correctAnswer) {
-            console.log("Correct!");
+            console.log("Question 2 Correct!");
             thirdQuestion();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
@@ -131,7 +144,7 @@ function secondQuestion() {
     })
     choice4.addEventListener("click",function () {
         if (choice4 === correctAnswer) {
-            console.log("Correct!");
+            console.log("Question 2 Correct!");
             thirdQuestion();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
@@ -142,17 +155,18 @@ function secondQuestion() {
 }
 //question 3
 function thirdQuestion() {
+    console.log('third questions');
     quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
     choice1.textContent = "dolor";
     choice2.textContent = "ipsum";
     choice3.textContent = "consectetur";
     choice4.textContent = "elit";
-    var correctAnswer = choice2;
+    var correctAnswer = choice3;
 
     //functions for clicking answers
     choice1.addEventListener("click", function () {
         if (choice1 === correctAnswer) {
-            console.log("Correct!");
+            console.log("Question 3 Correct!");
             fourthQuestion();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
@@ -160,9 +174,10 @@ function thirdQuestion() {
             fourthQuestion();
         }
     })
-    choice2.addEventListener("click",function () {
+    choice2.addEventListener("click",function (event) {
         if (choice2 === correctAnswer) {
-            console.log("Correct!");
+            // event.stopPropagation();
+            console.log("Question 3 Correct!");
             fourthQuestion();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
@@ -172,7 +187,7 @@ function thirdQuestion() {
     })
     choice3.addEventListener("click",function () {
         if (choice3 === correctAnswer) {
-            console.log("Correct!");
+            console.log("Question 3 Correct!");
             fourthQuestion();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
@@ -182,7 +197,7 @@ function thirdQuestion() {
     })
     choice4.addEventListener("click",function () {
         if (choice4 === correctAnswer) {
-            console.log("Correct!");
+            console.log("Question 3 Correct!");
             fourthQuestion();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
@@ -193,17 +208,18 @@ function thirdQuestion() {
 }
 //question 4
 function fourthQuestion() {
+    console.log('fourth questions');
     quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
     choice1.textContent = "elit";
     choice2.textContent = "adipisicing";
     choice3.textContent = "consectetur";
     choice4.textContent = "amet";
-    var correctAnswer = choice2;
+    var correctAnswer = choice4;
 
     //functions for clicking answers
     choice1.addEventListener("click", function () {
         if (choice1 === correctAnswer) {
-            console.log("Correct!");
+            console.log("Question 4 Correct!");
             fifthQuestion();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
@@ -211,9 +227,10 @@ function fourthQuestion() {
             fifthQuestion();
         }
     })
-    choice2.addEventListener("click",function () {
+    choice2.addEventListener("click",function (event) {
         if (choice2 === correctAnswer) {
-            console.log("Correct!");
+            // event.stopPropagation();
+            console.log("Question 4 Correct!");
             fifthQuestion();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
@@ -223,7 +240,7 @@ function fourthQuestion() {
     })
     choice3.addEventListener("click",function () {
         if (choice3 === correctAnswer) {
-            console.log("Correct!");
+            console.log("Question 4 Correct!");
             fifthQuestion();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
@@ -233,7 +250,7 @@ function fourthQuestion() {
     })
     choice4.addEventListener("click",function () {
         if (choice4 === correctAnswer) {
-            console.log("Correct!");
+            console.log("Question 4 Correct!");
             fifthQuestion();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
@@ -244,17 +261,18 @@ function fourthQuestion() {
 }
 //question 5
 function fifthQuestion() {
+    console.log('fifth questions');
     quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
     choice1.textContent = "sit";
     choice2.textContent = "dolor";
     choice3.textContent = "ipsem";
     choice4.textContent = "lorem";
-    var correctAnswer = choice2;
+    var correctAnswer = choice1;
 
     //functions for clicking answers
     choice1.addEventListener("click", function () {
         if (choice1 === correctAnswer) {
-            console.log("Correct!");
+            console.log("Question 5 Correct!");
             quizComplete();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
@@ -262,9 +280,10 @@ function fifthQuestion() {
             quizComplete();
         }
     })
-    choice2.addEventListener("click",function () {
+    choice2.addEventListener("click",function (event) {
         if (choice2 === correctAnswer) {
-            console.log("Correct!");
+            // event.stopPropagation();
+            console.log("Question 5 Correct!");
             quizComplete();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
@@ -274,7 +293,7 @@ function fifthQuestion() {
     })
     choice3.addEventListener("click",function () {
         if (choice3 === correctAnswer) {
-            console.log("Correct!");
+            console.log("Question 5 Correct!");
             quizComplete();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
@@ -284,7 +303,7 @@ function fifthQuestion() {
     })
     choice4.addEventListener("click",function () {
         if (choice4 === correctAnswer) {
-            console.log("Correct!");
+            console.log("Question 5 Correct!");
             quizComplete();
         }else{
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
@@ -316,6 +335,7 @@ function quizComplete() {
         //go to intial input function
         logInitial;
     })
+    document.onkeydown = logInitial;
 }
 //times up funtion
 function timesUp() {
@@ -339,10 +359,10 @@ function timesUp() {
        //go to intial input function
         logInitial;
     });
+    document.onkeydown = logInitial;
 }
 //enter intials, save score
 
-document.onkeydown = logInitial;
 var initials = [];
 function logInitial(event) {
     event.preventDefault();
@@ -350,15 +370,37 @@ function logInitial(event) {
     initials.push(key);
     initialsInput.textContent = initials.join(" ");
     console.log(initials);
+    console.log(initials.length);
     if (initials.length === 3) {
-        // set save button, 
-        //go to list of high scores
+        initials = initials.join(" ");
         return initials;
     }
-    saveButton.addEventListener("click", function(){
-        console.log("Saving Iintials and Score");
+    //go to list of high scores
+    // set save button, 
+    saveButton.addEventListener("click", function(event){
+        event.stopPropagation();
+        event.preventDefault();
+        console.log("Saving Intials and Score");
+        var listEl = document.createElement("li");
+        var score = document.createTextNode(initials);
+        console.log(score);
+        listEl.appendChild(score);
+        scoreList.appendChild(score);
+        restartButton.style.display = "block";
     })
 }
+restartButton.addEventListener('click', function(){
+    startButton.style.display = 'block';
+    startButton.textContent = 'Start Quiz';
+    quizArea.textContent = 'Play Again?';
+    scoreList.style.display = 'none';
+    saveButton.style.display = 'none';
+    initialsInput.textContent = '';
+    initialsPrompt.style.display = 'none';
+    restartButton.style.display = 'none';
+    countdown = 10;
+    return countdown;
+})
 //retain high scores (local storage)
 
 //clear scores button
