@@ -13,3 +13,9 @@
 #scoreButton{
     display: none;
 }
+#saveButton{
+    display: none;
+}
+#initialsPrompt{
+    display: none;
+}

@@ -9,6 +9,9 @@ var choice3 = document.querySelector("#choice3");
 var choice4 = document.querySelector("#choice4");
 var countdown = 10;
 var scoreButton = document.querySelector("#scoreButton");
+var initialsInput = document.querySelector("#initialsInput");
+var saveButton = document.querySelector("#saveButton");
+var initialsPrompt = document.querySelector("#initialsPrompt");
 
 //when start button pressed, start timer, present first question
 startButton.addEventListener("click", function () {
@@ -305,6 +308,11 @@ function quizComplete() {
     scoreButton.textContent = "Go to Score Screen";
     scoreButton.addEventListener("click", function(){
         console.log("going to score screen");
+        scoreButton.style.display = "none";
+        saveButton.style.display = "block";
+        quizArea.style.display = "block";
+        quizArea.textContent = `Score ${countdown}`;
+        initialsPrompt.style.display = "block";
         //go to intial input function
         logInitial;
     })
@@ -323,27 +331,33 @@ function timesUp() {
     scoreButton.textContent = "Go to Score Screen";
     scoreButton.addEventListener("click", function(){
         console.log("going to score screen");
-        //go to intial input function
+        scoreButton.style.display = "none";
+        saveButton.style.display = "block";
+        quizArea.style.display = "block";
+        quizArea.textContent = `Score ${countdown}`;
+        initialsPrompt.style.display = "block";
+       //go to intial input function
         logInitial;
     });
 }
 //enter intials, save score
-//key press event not looping to fill initials array
-function keyPress(event){
+
+document.onkeydown = logInitial;
+var initials = [];
+function logInitial(event) {
     event.preventDefault();
-    console.log(event);
     var key = event.key;
-    console.log(key);
-    return key;
-}
-document.onkeydown = keyPress;
-function logInitial() {
-    var intials = Array(3);
-    for ( i = 0; i < intials.length; i++) {
-        intials[i] = keyPress;
-        console.log(intials);
-        return intials
+    initials.push(key);
+    initialsInput.textContent = initials.join(" ");
+    console.log(initials);
+    if (initials.length === 3) {
+        // set save button, 
+        //go to list of high scores
+        return initials;
     }
+    saveButton.addEventListener("click", function(){
+        console.log("Saving Iintials and Score");
+    })
 }
 //retain high scores (local storage)
 
