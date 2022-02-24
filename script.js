@@ -417,7 +417,6 @@ function timesUp() {
     document.onkeydown = logInitial;
 }
 //enter intials, save score
-//why isn't event listener working on rerun
 var initials = [];
 function logInitial(event) {
     event.preventDefault();
