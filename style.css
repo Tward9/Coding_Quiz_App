@@ -67,7 +67,7 @@
 #initialsPrompt{
     display: none;
 }
-#scoreList{
+.list{
     list-style-type: none;
 }
 #restartButton{

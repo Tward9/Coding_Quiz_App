@@ -28,6 +28,7 @@ var initialsInput = document.querySelector("#initialsInput");
 var saveButton = document.querySelector("#saveButton");
 var initialsPrompt = document.querySelector("#initialsPrompt");
 var scoreList = document.querySelector('#scoreList');
+var scoreVal = document.querySelector('#scoreVal');
 var restartButton = document.querySelector('#restartButton');
 var countdown = 1000;
 
@@ -416,10 +417,12 @@ function timesUp() {
     document.onkeydown = logInitial;
 }
 //enter intials, save score
-
+//why isn't event listener working on rerun
 var initials = [];
 function logInitial(event) {
     event.preventDefault();
+    initialsPrompt.style.display = 'block';
+    initialsInput.style.display = 'block';
     var key = event.key;
     initials.push(key);
     initialsInput.textContent = initials.join(" ");
@@ -432,25 +435,35 @@ function logInitial(event) {
     //go to list of high scores
     // set save button, 
     saveButton.addEventListener("click", function(event){
-        event.stopPropagation();
         event.preventDefault();
+        quizArea.textContent = 'Scores';
         console.log("Saving Intials and Score");
-        var listEl = document.createElement("li");
-        var score = document.createTextNode(initials);
-        console.log(score);
-        listEl.appendChild(score);
-        scoreList.appendChild(score);
+        var scoreInitial = document.createTextNode(initials);
+        var score = document.createTextNode(countdown);
+        var liSI = document.createElement('li');
+        var liS = document.createElement('li');
+        liSI.appendChild(scoreInitial);
+        liS.appendChild(score);
+        scoreList.style.display = 'block';
+        scoreList.appendChild(liSI);
+        scoreVal.style.display = 'block';
+        scoreList.appendChild(liS);
         restartButton.style.display = "block";
+        localStorage.setItem("scoreListEl", scoreInitial);
+        localStorage.setItem("scoreValEl", scoreVal);
+        initialsInput.textContent = '';
+        initialsPrompt.style.display = 'none';
+        initials=[];
+        event.stopImmediatePropagation();
     })
 }
-restartButton.addEventListener('click', function(){
+restartButton.addEventListener('click', function(event){
     startButton.style.display = 'block';
     startButton.textContent = 'Start Quiz';
     quizArea.textContent = 'Play Again?';
     scoreList.style.display = 'none';
+    scoreVal.style.display = 'none';
     saveButton.style.display = 'none';
-    initialsInput.textContent = '';
-    initialsPrompt.style.display = 'none';
     restartButton.style.display = 'none';
     countdown = 10;
     return countdown;
