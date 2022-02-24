@@ -35,6 +35,7 @@ startButton.addEventListener("click", function () {
 //present question function
 //question answered, present next question
 //question incorect, subtract remaining time from timer
+// stop propogation removed for purposes of question, why is answer choice rediating through each function?
 function firstQuestion() {
     console.log('first questions');
     quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
@@ -53,11 +54,9 @@ function firstQuestion() {
     //functions for clicking answers
     choice1.addEventListener("click", function (event) {
         if (choice1 === correctAnswer) {
-            event.stopPropagation();
             console.log("Correct!");
             secondQuestion();
         }else{
-            event.stopPropagation();
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
             countdown = countdown - 5;
             secondQuestion();
@@ -65,11 +64,9 @@ function firstQuestion() {
     })
     choice2.addEventListener("click",function (event) {
         if (choice2 === correctAnswer) {
-            event.stopPropagation();
             console.log("Correct!");
             secondQuestion();
         }else{
-            event.stopPropagation();
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
             countdown = countdown - 5;
             secondQuestion();
@@ -77,11 +74,9 @@ function firstQuestion() {
     })
     choice3.addEventListener("click",function (event) {
         if (choice3 === correctAnswer) {
-            event.stopPropagation();
             console.log("Correct!");
             secondQuestion();
         }else{
-            event.stopPropagation();
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
             countdown = countdown - 5;
             secondQuestion();
@@ -89,11 +84,9 @@ function firstQuestion() {
     })
     choice4.addEventListener("click",function (event) {
         if (choice4 === correctAnswer) {
-            event.stopPropagation();
             console.log("Correct!");
             secondQuestion();
         }else{
-            event.stopPropagation();
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
             countdown = countdown - 5;
             secondQuestion();
@@ -113,11 +106,9 @@ function secondQuestion() {
     //functions for clicking answers
     choice1.addEventListener("click", function (event) {
         if (choice1 === correctAnswer) {
-            event.stopPropagation();
             console.log("Question 2 Correct!");
             thirdQuestion();
         }else{
-            event.stopPropagation();
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
             countdown = countdown - 5;
             thirdQuestion();
@@ -125,11 +116,9 @@ function secondQuestion() {
     })
     choice2.addEventListener("click",function (event) {
         if (choice2 === correctAnswer) {
-            event.stopPropagation();
             console.log("Question 2 Correct!");
             thirdQuestion();
         }else{
-            event.stopPropagation();
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
             countdown = countdown - 5;
             thirdQuestion();
@@ -137,11 +126,9 @@ function secondQuestion() {
     })
     choice3.addEventListener("click",function (event) {
         if (choice3 === correctAnswer) {
-            event.stopPropagation();
             console.log("Question 2 Correct!");
             thirdQuestion();
         }else{
-            event.stopPropagation();
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
             countdown = countdown - 5;
             thirdQuestion();
@@ -149,11 +136,9 @@ function secondQuestion() {
     })
     choice4.addEventListener("click",function (event) {
         if (choice4 === correctAnswer) {
-            event.stopPropagation();
             console.log("Question 2 Correct!");
             thirdQuestion();
         }else{
-            event.stopPropagation();
             console.log(`Incorect, the Correct Answer was ${correctAnswer.textContent}`);
             countdown = countdown - 5;
             thirdQuestion();
@@ -172,7 +157,6 @@ function thirdQuestion() {
 
     //functions for clicking answers
     choice1.addEventListener("click", function (event) {
-        event.stopPropagation();
         if (choice1 === correctAnswer) {
             console.log("Question 3 Correct!");
             fourthQuestion();
@@ -183,7 +167,6 @@ function thirdQuestion() {
         }
     })
     choice2.addEventListener("click",function (event) {
-        event.stopPropagation();
         if (choice2 === correctAnswer) {
             console.log("Question 3 Correct!");
             fourthQuestion();
@@ -194,7 +177,6 @@ function thirdQuestion() {
         }
     })
     choice3.addEventListener("click",function (event) {
-        event.stopPropagation();
         if (choice3 === correctAnswer) {
             console.log("Question 3 Correct!");
             fourthQuestion();
@@ -205,7 +187,6 @@ function thirdQuestion() {
         }
     })
     choice4.addEventListener("click",function (event) {
-        event.stopPropagation();
         if (choice4 === correctAnswer) {
             console.log("Question 3 Correct!");
             fourthQuestion();
@@ -228,7 +209,6 @@ function fourthQuestion() {
 
     //functions for clicking answers
     choice1.addEventListener("click", function (event) {
-        event.stopPropagation();
         if (choice1 === correctAnswer) {
             console.log("Question 4 Correct!");
             fifthQuestion();
@@ -239,7 +219,6 @@ function fourthQuestion() {
         }
     })
     choice2.addEventListener("click",function (event) {
-        event.stopPropagation();
         if (choice2 === correctAnswer) {
             console.log("Question 4 Correct!");
             fifthQuestion();
@@ -250,7 +229,6 @@ function fourthQuestion() {
         }
     })
     choice3.addEventListener("click",function (event) {
-        event.stopPropagation();
         if (choice3 === correctAnswer) {
             console.log("Question 4 Correct!");
             fifthQuestion();
@@ -261,7 +239,6 @@ function fourthQuestion() {
         }
     })
     choice4.addEventListener("click",function (event) {
-        event.stopPropagation();
         if (choice4 === correctAnswer) {
             console.log("Question 4 Correct!");
             fifthQuestion();
@@ -284,7 +261,6 @@ function fifthQuestion() {
 
     //functions for clicking answers
     choice1.addEventListener("click", function (event) {
-        event.stopPropagation();
         if (choice1 === correctAnswer) {
             console.log("Question 5 Correct!");
             quizComplete();
@@ -295,7 +271,6 @@ function fifthQuestion() {
         }
     })
     choice2.addEventListener("click",function (event) {
-        event.stopPropagation();
         if (choice2 === correctAnswer) {
             console.log("Question 5 Correct!");
             quizComplete();
@@ -306,7 +281,6 @@ function fifthQuestion() {
         }
     })
     choice3.addEventListener("click",function (event) {
-        event.stopPropagation();
         if (choice3 === correctAnswer) {
             console.log("Question 5 Correct!");
             quizComplete();
@@ -317,7 +291,6 @@ function fifthQuestion() {
         }
     })
     choice4.addEventListener("click",function (event) {
-        event.stopPropagation();
         if (choice4 === correctAnswer) {
             console.log("Question 5 Correct!");
             quizComplete();
