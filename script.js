@@ -3,10 +3,26 @@ var quizArea = document.querySelector("#quizArea");
 var timer = document.querySelector("#timer");
 var subtitle = document.querySelector("#subtitle");
 var timerEl;
-var choice1 = document.querySelector("#choice1");
-var choice2 = document.querySelector("#choice2");
-var choice3 = document.querySelector("#choice3");
-var choice4 = document.querySelector("#choice4");
+var Q1choice1 = document.querySelector("#Q1choice1");
+var Q1choice2 = document.querySelector("#Q1choice2");
+var Q1choice3 = document.querySelector("#Q1choice3");
+var Q1choice4 = document.querySelector("#Q1choice4");
+var Q2choice1 = document.querySelector("#Q2choice1");
+var Q2choice2 = document.querySelector("#Q2choice2");
+var Q2choice3 = document.querySelector("#Q2choice3");
+var Q2choice4 = document.querySelector("#Q2choice4");
+var Q3choice1 = document.querySelector("#Q3choice1");
+var Q3choice2 = document.querySelector("#Q3choice2");
+var Q3choice3 = document.querySelector("#Q3choice3");
+var Q3choice4 = document.querySelector("#Q3choice4");
+var Q4choice1 = document.querySelector("#Q4choice1");
+var Q4choice2 = document.querySelector("#Q4choice2");
+var Q4choice3 = document.querySelector("#Q4choice3");
+var Q4choice4 = document.querySelector("#Q4choice4");
+var Q5choice1 = document.querySelector("#Q5choice1");
+var Q5choice2 = document.querySelector("#Q5choice2");
+var Q5choice3 = document.querySelector("#Q5choice3");
+var Q5choice4 = document.querySelector("#Q5choice4");
 var scoreButton = document.querySelector("#scoreButton");
 var initialsInput = document.querySelector("#initialsInput");
 var saveButton = document.querySelector("#saveButton");
@@ -39,21 +55,21 @@ startButton.addEventListener("click", function () {
 function firstQuestion() {
     console.log('first questions');
     quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
-    choice1.style.display = "block";
-    choice1.textContent = "lorem";
-    choice2.style.display = "block";
-    choice2.textContent = "ipsum";
-    choice3.textContent = "dolor";
-    choice3.style.display = "block";
-    choice4.textContent = "sit";
-    choice4.style.display = "block";
+    Q1choice1.style.display = "block";
+    Q1choice1.textContent = "lorem";
+    Q1choice2.style.display = "block";
+    Q1choice2.textContent = "ipsum";
+    Q1choice3.textContent = "dolor";
+    Q1choice3.style.display = "block";
+    Q1choice4.textContent = "sit";
+    Q1choice4.style.display = "block";
     startButton.textContent = "";
     startButton.style.display = "none";
-    var correctAnswer = choice1;
+    var correctAnswer = Q1choice1;
 
     //functions for clicking answers
-    choice1.addEventListener("click", function (event) {
-        if (choice1 === correctAnswer) {
+    Q1choice1.addEventListener("click", function (event) {
+        if (Q1choice1 === correctAnswer) {
             console.log("Correct!");
             secondQuestion();
         }else{
@@ -62,8 +78,8 @@ function firstQuestion() {
             secondQuestion();
         }
     })
-    choice2.addEventListener("click",function (event) {
-        if (choice2 === correctAnswer) {
+    Q1choice2.addEventListener("click",function (event) {
+        if (Q1choice2 === correctAnswer) {
             console.log("Correct!");
             secondQuestion();
         }else{
@@ -72,8 +88,8 @@ function firstQuestion() {
             secondQuestion();
         }
     })
-    choice3.addEventListener("click",function (event) {
-        if (choice3 === correctAnswer) {
+    Q1choice3.addEventListener("click",function (event) {
+        if (Q1choice3 === correctAnswer) {
             console.log("Correct!");
             secondQuestion();
         }else{
@@ -82,8 +98,8 @@ function firstQuestion() {
             secondQuestion();
         }
     })
-    choice4.addEventListener("click",function (event) {
-        if (choice4 === correctAnswer) {
+    Q1choice4.addEventListener("click",function (event) {
+        if (Q1choice4 === correctAnswer) {
             console.log("Correct!");
             secondQuestion();
         }else{
@@ -97,15 +113,24 @@ function firstQuestion() {
 function secondQuestion() {
     console.log('second questions');
     quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
-    choice1.textContent = "lorem";
-    choice2.textContent = "amet";
-    choice3.textContent = "adipisicing";
-    choice4.textContent = "sit";
-    var correctAnswer = choice2;
+    Q2choice1.style.display = "block";
+    Q2choice2.style.display = "block";
+    Q2choice3.style.display = "block";
+    Q2choice4.style.display = "block";
+    Q1choice1.style.display = "none";
+    Q1choice2.style.display = "none";
+    Q1choice3.style.display = "none";
+    Q1choice4.style.display = "none";
+    Q2choice1.textContent = "lorem";
+    Q2choice2.textContent = "amet";
+    Q2choice3.textContent = "adipisicing";
+    Q2choice4.textContent = "sit";
+    
+    var correctAnswer = Q2choice2;
 
     //functions for clicking answers
-    choice1.addEventListener("click", function (event) {
-        if (choice1 === correctAnswer) {
+    Q2choice1.addEventListener("click", function (event) {
+        if (Q2choice1 === correctAnswer) {
             console.log("Question 2 Correct!");
             thirdQuestion();
         }else{
@@ -114,8 +139,8 @@ function secondQuestion() {
             thirdQuestion();
         }
     })
-    choice2.addEventListener("click",function (event) {
-        if (choice2 === correctAnswer) {
+    Q2choice2.addEventListener("click",function (event) {
+        if (Q2choice2 === correctAnswer) {
             console.log("Question 2 Correct!");
             thirdQuestion();
         }else{
@@ -124,8 +149,8 @@ function secondQuestion() {
             thirdQuestion();
         }
     })
-    choice3.addEventListener("click",function (event) {
-        if (choice3 === correctAnswer) {
+    Q2choice3.addEventListener("click",function (event) {
+        if (Q2choice3 === correctAnswer) {
             console.log("Question 2 Correct!");
             thirdQuestion();
         }else{
@@ -134,8 +159,8 @@ function secondQuestion() {
             thirdQuestion();
         }
     })
-    choice4.addEventListener("click",function (event) {
-        if (choice4 === correctAnswer) {
+    Q2choice4.addEventListener("click",function (event) {
+        if (Q2choice4 === correctAnswer) {
             console.log("Question 2 Correct!");
             thirdQuestion();
         }else{
@@ -149,15 +174,23 @@ function secondQuestion() {
 function thirdQuestion() {
     console.log('third questions');
     quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
-    choice1.textContent = "dolor";
-    choice2.textContent = "ipsum";
-    choice3.textContent = "consectetur";
-    choice4.textContent = "elit";
-    var correctAnswer = choice3;
+    Q3choice1.style.display = "block";
+    Q3choice2.style.display = "block";
+    Q3choice3.style.display = "block";
+    Q3choice4.style.display = "block";
+    Q2choice1.style.display = "none";
+    Q2choice2.style.display = "none";
+    Q2choice3.style.display = "none";
+    Q2choice4.style.display = "none";
+    Q3choice1.textContent = "dolor";
+    Q3choice2.textContent = "ipsum";
+    Q3choice3.textContent = "consectetur";
+    Q3choice4.textContent = "elit";
+    var correctAnswer = Q3choice3;
 
     //functions for clicking answers
-    choice1.addEventListener("click", function (event) {
-        if (choice1 === correctAnswer) {
+    Q3choice1.addEventListener("click", function (event) {
+        if (Q3choice1 === correctAnswer) {
             console.log("Question 3 Correct!");
             fourthQuestion();
         }else{
@@ -166,8 +199,8 @@ function thirdQuestion() {
             fourthQuestion();
         }
     })
-    choice2.addEventListener("click",function (event) {
-        if (choice2 === correctAnswer) {
+    Q3choice2.addEventListener("click",function (event) {
+        if (Q3choice2 === correctAnswer) {
             console.log("Question 3 Correct!");
             fourthQuestion();
         }else{
@@ -176,8 +209,8 @@ function thirdQuestion() {
             fourthQuestion();
         }
     })
-    choice3.addEventListener("click",function (event) {
-        if (choice3 === correctAnswer) {
+    Q3choice3.addEventListener("click",function (event) {
+        if (Q3choice3 === correctAnswer) {
             console.log("Question 3 Correct!");
             fourthQuestion();
         }else{
@@ -186,8 +219,8 @@ function thirdQuestion() {
             fourthQuestion();
         }
     })
-    choice4.addEventListener("click",function (event) {
-        if (choice4 === correctAnswer) {
+    Q3choice4.addEventListener("click",function (event) {
+        if (Q3choice4 === correctAnswer) {
             console.log("Question 3 Correct!");
             fourthQuestion();
         }else{
@@ -201,15 +234,23 @@ function thirdQuestion() {
 function fourthQuestion() {
     console.log('fourth questions');
     quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
-    choice1.textContent = "elit";
-    choice2.textContent = "adipisicing";
-    choice3.textContent = "consectetur";
-    choice4.textContent = "amet";
-    var correctAnswer = choice4;
+    Q4choice1.style.display = "block";
+    Q4choice2.style.display = "block";
+    Q4choice3.style.display = "block";
+    Q4choice4.style.display = "block";
+    Q3choice1.style.display = "none";
+    Q3choice2.style.display = "none";
+    Q3choice3.style.display = "none";
+    Q3choice4.style.display = "none";
+    Q4choice1.textContent = "elit";
+    Q4choice2.textContent = "adipisicing";
+    Q4choice3.textContent = "consectetur";
+    Q4choice4.textContent = "amet";
+    var correctAnswer = Q4choice4;
 
     //functions for clicking answers
-    choice1.addEventListener("click", function (event) {
-        if (choice1 === correctAnswer) {
+    Q4choice1.addEventListener("click", function (event) {
+        if (Q4choice1 === correctAnswer) {
             console.log("Question 4 Correct!");
             fifthQuestion();
         }else{
@@ -218,8 +259,8 @@ function fourthQuestion() {
             fifthQuestion();
         }
     })
-    choice2.addEventListener("click",function (event) {
-        if (choice2 === correctAnswer) {
+    Q4choice2.addEventListener("click",function (event) {
+        if (Q4choice2 === correctAnswer) {
             console.log("Question 4 Correct!");
             fifthQuestion();
         }else{
@@ -228,8 +269,8 @@ function fourthQuestion() {
             fifthQuestion();
         }
     })
-    choice3.addEventListener("click",function (event) {
-        if (choice3 === correctAnswer) {
+    Q4choice3.addEventListener("click",function (event) {
+        if (Q4choice3 === correctAnswer) {
             console.log("Question 4 Correct!");
             fifthQuestion();
         }else{
@@ -238,8 +279,8 @@ function fourthQuestion() {
             fifthQuestion();
         }
     })
-    choice4.addEventListener("click",function (event) {
-        if (choice4 === correctAnswer) {
+    Q4choice4.addEventListener("click",function (event) {
+        if (Q4choice4 === correctAnswer) {
             console.log("Question 4 Correct!");
             fifthQuestion();
         }else{
@@ -253,15 +294,23 @@ function fourthQuestion() {
 function fifthQuestion() {
     console.log('fifth questions');
     quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
-    choice1.textContent = "sit";
-    choice2.textContent = "dolor";
-    choice3.textContent = "ipsem";
-    choice4.textContent = "lorem";
-    var correctAnswer = choice1;
+    Q5choice1.style.display = "block";
+    Q5choice2.style.display = "block";
+    Q5choice3.style.display = "block";
+    Q5choice4.style.display = "block";
+    Q4choice1.style.display = "none";
+    Q4choice2.style.display = "none";
+    Q4choice3.style.display = "none";
+    Q4choice4.style.display = "none";
+    Q5choice1.textContent = "sit";
+    Q5choice2.textContent = "dolor";
+    Q5choice3.textContent = "ipsem";
+    Q5choice4.textContent = "lorem";
+    var correctAnswer = Q5choice1;
 
     //functions for clicking answers
-    choice1.addEventListener("click", function (event) {
-        if (choice1 === correctAnswer) {
+    Q5choice1.addEventListener("click", function (event) {
+        if (Q5choice1 === correctAnswer) {
             console.log("Question 5 Correct!");
             quizComplete();
         }else{
@@ -270,8 +319,8 @@ function fifthQuestion() {
             quizComplete();
         }
     })
-    choice2.addEventListener("click",function (event) {
-        if (choice2 === correctAnswer) {
+    Q5choice2.addEventListener("click",function (event) {
+        if (Q5choice2 === correctAnswer) {
             console.log("Question 5 Correct!");
             quizComplete();
         }else{
@@ -280,8 +329,8 @@ function fifthQuestion() {
             quizComplete();
         }
     })
-    choice3.addEventListener("click",function (event) {
-        if (choice3 === correctAnswer) {
+    Q5choice3.addEventListener("click",function (event) {
+        if (Q5choice3 === correctAnswer) {
             console.log("Question 5 Correct!");
             quizComplete();
         }else{
@@ -290,8 +339,8 @@ function fifthQuestion() {
             quizComplete();
         }
     })
-    choice4.addEventListener("click",function (event) {
-        if (choice4 === correctAnswer) {
+    Q5choice4.addEventListener("click",function (event) {
+        if (Q5choice4 === correctAnswer) {
             console.log("Question 5 Correct!");
             quizComplete();
         }else{
@@ -308,10 +357,10 @@ function quizComplete() {
     timer.textContent = "";
     quizArea.textContent = "Quiz Complete!"
     subtitle.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptatibus tempore amet vitae unde vero reiciendis, temporibus, provident dolorum at odit officia omnis iste perspiciatis quis recusandae eligendi facilis. Qui!"
-    choice1.style.display = "none";
-    choice2.style.display = "none";
-    choice3.style.display = "none";
-    choice4.style.display = "none";
+    Q5choice1.style.display = "none";
+    Q5choice2.style.display = "none";
+    Q5choice3.style.display = "none";
+    Q5choice4.style.display = "none";
     scoreButton.style.display = "block";
     scoreButton.textContent = "Go to Score Screen";
     scoreButton.addEventListener("click", function(){
@@ -331,11 +380,27 @@ function timesUp() {
     clearInterval(timerEl);
     timer.textContent = "";
     quizArea.textContent = "Time Has Run Out!"
-    subtitle.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptatibus tempore amet vitae unde vero reiciendis, temporibus, provident dolorum at odit officia omnis iste perspiciatis quis recusandae eligendi facilis. Qui!"
-    choice1.style.display = "none";
-    choice2.style.display = "none";
-    choice3.style.display = "none";
-    choice4.style.display = "none";
+    subtitle.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptatibus tempore amet vitae unde vero reiciendis, temporibus, provident dolorum at odit officia omnis iste perspiciatis quis recusandae eligendi facilis. Qui!";
+    Q1choice1.style.display = "none";
+    Q1choice2.style.display = "none";
+    Q1choice3.style.display = "none";
+    Q1choice4.style.display = "none";
+    Q2choice1.style.display = "none";
+    Q2choice2.style.display = "none";
+    Q2choice3.style.display = "none";
+    Q2choice4.style.display = "none";
+    Q3choice1.style.display = "none";
+    Q3choice2.style.display = "none";
+    Q3choice3.style.display = "none";
+    Q3choice4.style.display = "none";
+    Q4choice1.style.display = "none";
+    Q4choice2.style.display = "none";
+    Q4choice3.style.display = "none";
+    Q4choice4.style.display = "none";
+    Q5choice1.style.display = "none";
+    Q5choice2.style.display = "none";
+    Q5choice3.style.display = "none";
+    Q5choice4.style.display = "none";
     scoreButton.style.display = "block";
     scoreButton.textContent = "Go to Score Screen";
     scoreButton.addEventListener("click", function(){

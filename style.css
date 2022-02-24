@@ -1,13 +1,61 @@
-#choice1{
+#Q1choice1{
     display: none;
 }
-#choice2{
+#Q1choice2{
     display: none;
 }
-#choice3{
+#Q1choice3{
     display: none;
 }
-#choice4{
+#Q1choice4{
+    display: none;
+}
+#Q2choice1{
+    display: none;
+}
+#Q2choice2{
+    display: none;
+}
+#Q2choice3{
+    display: none;
+}
+#Q2choice4{
+    display: none;
+}
+#Q3choice1{
+    display: none;
+}
+#Q3choice2{
+    display: none;
+}
+#Q3choice3{
+    display: none;
+}
+#Q3choice4{
+    display: none;
+}
+#Q4choice1{
+    display: none;
+}
+#Q4choice2{
+    display: none;
+}
+#Q4choice3{
+    display: none;
+}
+#Q4choice4{
+    display: none;
+}
+#Q5choice1{
+    display: none;
+}
+#Q5choice2{
+    display: none;
+}
+#Q5choice3{
+    display: none;
+}
+#Q5choice4{
     display: none;
 }
 #scoreButton{
