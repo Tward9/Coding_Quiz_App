@@ -30,8 +30,9 @@ var initialsPrompt = document.querySelector("#initialsPrompt");
 var scoreList = document.querySelector('#scoreList');
 var scoreVal = document.querySelector('#scoreVal');
 var restartButton = document.querySelector('#restartButton');
-var countdown = 1000;
+var countdown = 100;
 var viewScores = document.querySelector('#viewScores');
+var clearScores = document.querySelector('#clearScores');
 
 //when start button pressed, start timer, present first question
 startButton.addEventListener("click", function () {
@@ -456,6 +457,7 @@ function logInitial(event) {
     viewScores.addEventListener('click', function(event){
         event.preventDefault();
         saveButton.style.display = "none";
+        clearScores.style.display = 'block';
         var allInitials = JSON.parse(localStorage.getItem('scoreListEl')) || [];
         var allScores = JSON.parse(localStorage.getItem('scoreValEl')) || [];
         console.log(allInitials, allScores);
@@ -480,9 +482,17 @@ function logInitial(event) {
         event.stopImmediatePropagation();
     });
 }
+//clear scores button
+clearScores.addEventListener('click', function(event){
+    event.preventDefault();
+    localStorage.clear();
+    scoreList.textContent = ``;
+    scoreVal.textContent = ``;
+})
 restartButton.addEventListener('click', function(event){
     initials=[];
     startButton.style.display = 'block';
+    clearScores.style.display = 'none';
     startButton.textContent = 'Start Quiz';
     quizArea.textContent = 'Play Again?';
     scoreList.style.display = 'none';
@@ -490,9 +500,6 @@ restartButton.addEventListener('click', function(event){
     viewScores.style.display = 'none';
     saveButton.style.display = 'none';
     restartButton.style.display = 'none';
-    countdown = 10;
+    countdown = 100;
     return countdown;
 })
-//retain high scores (local storage)
-
-//clear scores button
