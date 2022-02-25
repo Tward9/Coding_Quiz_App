@@ -427,9 +427,10 @@ function logInitial(event) {
     initialsInput.textContent = initials.join(" ");
     console.log(initials);
     console.log(initials.length);
+    var initialsStore = initials;
     if (initials.length === 3) {
         initials = initials.join(" ");
-        return initials;
+        return initials, initialsStore;
     }
     //go to list of high scores
     // set save button, 
@@ -437,26 +438,35 @@ function logInitial(event) {
         event.preventDefault();
         quizArea.textContent = 'Scores';
         console.log("Saving Intials and Score");
-        var scoreInitial = document.createTextNode(initials);
-        var score = document.createTextNode(countdown);
-        var liSI = document.createElement('li');
-        var liS = document.createElement('li');
-        liSI.appendChild(scoreInitial);
-        liS.appendChild(score);
+        scoreList.textContent = `${initials}`;
         scoreList.style.display = 'block';
-        scoreList.appendChild(liSI);
+        scoreVal.textContent = `${countdown}`;
         scoreVal.style.display = 'block';
-        scoreList.appendChild(liS);
-        restartButton.style.display = "block";
-        localStorage.setItem("scoreListEl", scoreInitial);
-        localStorage.setItem("scoreValEl", scoreVal);
+        var scoreArray = [];
+        scoreArray.push(countdown);
+        localStorage.setItem('scoreListEl', JSON.stringify(initialsStore));
+        localStorage.setItem('scoreValEl', JSON.stringify(scoreArray));
+
+        // var scoreInitial = document.createTextNode(initials);
+        // var score = document.createTextNode(countdown);
+        // var liSI = document.createElement('li');
+        // var liS = document.createElement('li');
+        // liSI.appendChild(scoreInitial);
+        // liS.appendChild(score);
+        // scoreList.style.display = 'block';
+        // scoreList.appendChild(liSI);
+        // scoreVal.style.display = 'block';
+        // scoreList.appendChild(liS);
+        // restartButton.style.display = "block";
+        // localStorage.setItem("scoreListEl", scoreInitial);
+        // localStorage.setItem("scoreValEl", scoreVal);
         initialsInput.textContent = '';
         initialsPrompt.style.display = 'none';
-        initials=[];
         event.stopImmediatePropagation();
     })
 }
 restartButton.addEventListener('click', function(event){
+    initials=[];
     startButton.style.display = 'block';
     startButton.textContent = 'Start Quiz';
     quizArea.textContent = 'Play Again?';
