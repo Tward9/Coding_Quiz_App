@@ -31,6 +31,7 @@ var scoreList = document.querySelector('#scoreList');
 var scoreVal = document.querySelector('#scoreVal');
 var restartButton = document.querySelector('#restartButton');
 var countdown = 1000;
+var viewScores = document.querySelector('#viewScores');
 
 //when start button pressed, start timer, present first question
 startButton.addEventListener("click", function () {
@@ -428,6 +429,7 @@ function logInitial(event) {
     console.log(initials);
     console.log(initials.length);
     var initialsStore = initials;
+    console.log(initialsStore);
     if (initials.length === 3) {
         initials = initials.join(" ");
         return initials, initialsStore;
@@ -443,27 +445,42 @@ function logInitial(event) {
         scoreVal.textContent = `${countdown}`;
         scoreVal.style.display = 'block';
         var scoreArray = [];
-        scoreArray.push(countdown);
-        localStorage.setItem('scoreListEl', JSON.stringify(initialsStore));
-        localStorage.setItem('scoreValEl', JSON.stringify(scoreArray));
+        scoreArray.concat(countdown);
+        // localStorage.setItem('scoreListEl', JSON.stringify(initialsStore));
+        // localStorage.setItem('scoreValEl', JSON.stringify(scoreArray));
 // set storage equal to variable (not sure settedr or getter part) add new score parts to that variable to display total scores
-        // var scoreInitial = document.createTextNode(initials);
-        // var score = document.createTextNode(countdown);
-        // var liSI = document.createElement('li');
-        // var liS = document.createElement('li');
-        // liSI.appendChild(scoreInitial);
-        // liS.appendChild(score);
-        // scoreList.style.display = 'block';
-        // scoreList.appendChild(liSI);
-        // scoreVal.style.display = 'block';
-        // scoreList.appendChild(liS);
-        // restartButton.style.display = "block";
-        // localStorage.setItem("scoreListEl", scoreInitial);
-        // localStorage.setItem("scoreValEl", scoreVal);
+        viewScores.style.display = 'block';
+        restartButton.style.display = "block";
         initialsInput.textContent = '';
         initialsPrompt.style.display = 'none';
         event.stopImmediatePropagation();
     })
+    viewScores.addEventListener('click', function(event){
+        event.preventDefault();
+        saveButton.style.display = "none";
+        var allInitials = JSON.parse(localStorage.getItem('scoreListEl')) || [];
+        var allScores = JSON.parse(localStorage.getItem('scoreValEl')) || [];
+        console.log(allInitials, allScores);
+        console.log(initialsStore);
+        var totalInitials = allInitials.concat(initialsStore);
+        console.log(totalInitials);
+        var totalScores = allScores.concat(countdown);
+        console.log(totalInitials, totalScores);
+        //totalInitials on rerun doesn't pull new intials, just adds old value
+        var initialsDisplay = [];
+        for ( i = 0; i < totalInitials.length; i+=3) {
+            var initialsDisplayEl = totalInitials[i] + totalInitials[i+1] + totalInitials[i+2];
+            initialsDisplay.push(initialsDisplayEl);
+            console.log(initialsDisplayEl);
+        }
+        initialsDisplay = initialsDisplay.join(' ');
+        console.log(initialsDisplay);
+        scoreList.textContent = `${initialsDisplay}`;
+        scoreVal.textContent = `${totalScores}`;
+        localStorage.setItem('scoreListEl', JSON.stringify(totalInitials));
+        localStorage.setItem('scoreValEl', JSON.stringify(totalScores));
+        event.stopImmediatePropagation();
+    });
 }
 restartButton.addEventListener('click', function(event){
     initials=[];
@@ -472,6 +489,7 @@ restartButton.addEventListener('click', function(event){
     quizArea.textContent = 'Play Again?';
     scoreList.style.display = 'none';
     scoreVal.style.display = 'none';
+    viewScores.style.display = 'none';
     saveButton.style.display = 'none';
     restartButton.style.display = 'none';
     countdown = 10;
