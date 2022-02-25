@@ -426,8 +426,8 @@ function logInitial(event) {
     var key = event.key;
     initials.push(key);
     initialsInput.textContent = initials.join(" ");
-    console.log(initials);
-    console.log(initials.length);
+    // console.log(initials);
+    // console.log(initials.length);
     var initialsStore = initials;
     console.log(initialsStore);
     if (initials.length === 3) {
@@ -446,8 +446,6 @@ function logInitial(event) {
         scoreVal.style.display = 'block';
         var scoreArray = [];
         scoreArray.concat(countdown);
-        // localStorage.setItem('scoreListEl', JSON.stringify(initialsStore));
-        // localStorage.setItem('scoreValEl', JSON.stringify(scoreArray));
 // set storage equal to variable (not sure settedr or getter part) add new score parts to that variable to display total scores
         viewScores.style.display = 'block';
         restartButton.style.display = "block";
@@ -462,7 +460,7 @@ function logInitial(event) {
         var allScores = JSON.parse(localStorage.getItem('scoreValEl')) || [];
         console.log(allInitials, allScores);
         console.log(initialsStore);
-        var totalInitials = allInitials.concat(initialsStore);
+        var totalInitials = allInitials.concat(initials.split(' '));
         console.log(totalInitials);
         var totalScores = allScores.concat(countdown);
         console.log(totalInitials, totalScores);
