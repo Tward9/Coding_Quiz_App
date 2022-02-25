@@ -446,7 +446,7 @@ function logInitial(event) {
         scoreArray.push(countdown);
         localStorage.setItem('scoreListEl', JSON.stringify(initialsStore));
         localStorage.setItem('scoreValEl', JSON.stringify(scoreArray));
-
+// set storage equal to variable (not sure settedr or getter part) add new score parts to that variable to display total scores
         // var scoreInitial = document.createTextNode(initials);
         // var score = document.createTextNode(countdown);
         // var liSI = document.createElement('li');
