@@ -474,9 +474,10 @@ function logInitial(event) {
             console.log(initialsDisplayEl);
         }
         initialsDisplay = initialsDisplay.join(' ');
+        var scoreDisplay = totalScores.join(' ')
         console.log(initialsDisplay);
         scoreList.textContent = `${initialsDisplay}`;
-        scoreVal.textContent = `${totalScores}`;
+        scoreVal.textContent = `${scoreDisplay}`;
         localStorage.setItem('scoreListEl', JSON.stringify(totalInitials));
         localStorage.setItem('scoreValEl', JSON.stringify(totalScores));
         event.stopImmediatePropagation();

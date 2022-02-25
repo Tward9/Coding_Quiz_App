@@ -58,21 +58,94 @@
 #Q5choice4{
     display: none;
 }
+#startButton{
+    color: #2b2d30;
+    width: 300px;
+    font-size: large;
+    margin: 1em auto;
+    background-color: #66CCAA;
+}
+#startButton:hover{
+    box-shadow: .25em .25em .25em #2b2d30;
+}
 #scoreButton{
     display: none;
+    color: #2b2d30;
+    width: 300px;
+    font-size: large;
+    margin: 1em auto;
+    background-color: #66CCAA;
+}
+#scoreButton:hover{
+    box-shadow: .25em .25em .25em #2b2d30;
 }
 #saveButton{
     display: none;
+    color: #2b2d30;
+    width: 300px;
+    font-size: large;
+    margin: 1em auto;
+    background-color: #66CCAA;
+}
+#saveButton:hover{
+    box-shadow: .25em .25em .25em #2b2d30;
 }
 #initialsPrompt{
     display: none;
 }
 #restartButton{
     display: none;
+    color: #2b2d30;
+    width: 300px;
+    font-size: large;
+    margin: 1em auto;
+    background-color: #66CCAA;
+}
+#restartButton:hover{
+    box-shadow: .25em .25em .25em #2b2d30;
 }
 #viewScores{
     display: none;
+    color: #2b2d30;
+    width: 300px;
+    font-size: large;
+    margin: 1em auto;
+    background-color: #66CCAA;
+}
+#viewScores:hover{
+    box-shadow: .25em .25em .25em #2b2d30;
 }
 #clearScores{
     display: none;
+    color: #2b2d30;
+    width: 300px;
+    font-size: large;
+    margin: 1em auto;
+    background-color: #66CCAA;
+}
+#clearScores:hover{
+    box-shadow: .25em .25em .25em #2b2d30;
+}
+body{
+    text-align: center;
+    font-size: larger;
+    max-width: 75%;
+    margin: auto;
+    margin-top: 5em;
+    background-color: #40806A;
+    vertical-align: middle;
+}
+#quizArea, #scoreVal, #scoreList, #initialsInput, #initialsPrompt{
+    background-color: #CCFFEE;
+}
+.choice{
+    background-color: aquamarine;
+    color: #2b2d30;
+    width: 300px;
+    font-size: large;
+    margin: 1em auto;
+    
+}
+.choice:hover{
+    box-shadow: .25em .25em .25em #2b2d30;
 }
