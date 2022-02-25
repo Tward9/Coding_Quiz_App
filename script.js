@@ -57,14 +57,14 @@ startButton.addEventListener("click", function () {
 // stop propogation removed for purposes of question, why is answer choice rediating through each function?
 function firstQuestion() {
     console.log('first questions');
-    quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
+    quizArea.textContent = "What are variables used for in JavaScript Programs?";
     Q1choice1.style.display = "block";
-    Q1choice1.textContent = "lorem";
+    Q1choice1.textContent = "Storing numbers, dates, or other values";
     Q1choice2.style.display = "block";
-    Q1choice2.textContent = "ipsum";
-    Q1choice3.textContent = "dolor";
+    Q1choice2.textContent = "Varying randomly";
+    Q1choice3.textContent = "Causing high-school algebra flashbacks";
     Q1choice3.style.display = "block";
-    Q1choice4.textContent = "sit";
+    Q1choice4.textContent = "None of the Above";
     Q1choice4.style.display = "block";
     startButton.textContent = "";
     startButton.style.display = "none";
@@ -115,7 +115,7 @@ function firstQuestion() {
 //question 2 function
 function secondQuestion() {
     console.log('second questions');
-    quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
+    quizArea.textContent = "What is the correct JavaScript syntax to write 'Hello World'?";
     Q2choice1.style.display = "block";
     Q2choice2.style.display = "block";
     Q2choice3.style.display = "block";
@@ -124,12 +124,12 @@ function secondQuestion() {
     Q1choice2.style.display = "none";
     Q1choice3.style.display = "none";
     Q1choice4.style.display = "none";
-    Q2choice1.textContent = "lorem";
-    Q2choice2.textContent = "amet";
-    Q2choice3.textContent = "adipisicing";
-    Q2choice4.textContent = "sit";
+    Q2choice1.textContent = "System.out.println('Hello World')";
+    Q2choice2.textContent = "println ('Hello World')";
+    Q2choice3.textContent = "document.write('Hello World')";
+    Q2choice4.textContent = "response.write('Hello World')";
     
-    var correctAnswer = Q2choice2;
+    var correctAnswer = Q2choice3;
 
     //functions for clicking answers
     Q2choice1.addEventListener("click", function (event) {
@@ -176,7 +176,7 @@ function secondQuestion() {
 //question 3
 function thirdQuestion() {
     console.log('third questions');
-    quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
+    quizArea.textContent = "Inside which HTML element do we put the JavaScript?";
     Q3choice1.style.display = "block";
     Q3choice2.style.display = "block";
     Q3choice3.style.display = "block";
@@ -185,11 +185,11 @@ function thirdQuestion() {
     Q2choice2.style.display = "none";
     Q2choice3.style.display = "none";
     Q2choice4.style.display = "none";
-    Q3choice1.textContent = "dolor";
-    Q3choice2.textContent = "ipsum";
-    Q3choice3.textContent = "consectetur";
-    Q3choice4.textContent = "elit";
-    var correctAnswer = Q3choice3;
+    Q3choice1.textContent = "<js>>";
+    Q3choice2.textContent = "<script>";
+    Q3choice3.textContent = "<scripting>";
+    Q3choice4.textContent = "<javascript>";
+    var correctAnswer = Q3choice2;
 
     //functions for clicking answers
     Q3choice1.addEventListener("click", function (event) {
@@ -236,7 +236,7 @@ function thirdQuestion() {
 //question 4
 function fourthQuestion() {
     console.log('fourth questions');
-    quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
+    quizArea.textContent = "How would one create a Date object in JavaScript?";
     Q4choice1.style.display = "block";
     Q4choice2.style.display = "block";
     Q4choice3.style.display = "block";
@@ -245,11 +245,11 @@ function fourthQuestion() {
     Q3choice2.style.display = "none";
     Q3choice3.style.display = "none";
     Q3choice4.style.display = "none";
-    Q4choice1.textContent = "elit";
-    Q4choice2.textContent = "adipisicing";
-    Q4choice3.textContent = "consectetur";
-    Q4choice4.textContent = "amet";
-    var correctAnswer = Q4choice4;
+    Q4choice1.textContent = "dateObjectName = new Date([parameters])";
+    Q4choice2.textContent = "dateObjectName.new Date([parameters])";
+    Q4choice3.textContent = "dateObjectName := new Date([parameters])";
+    Q4choice4.textContent = "dateObjectName Date([parameters])";
+    var correctAnswer = Q4choice1;
 
     //functions for clicking answers
     Q4choice1.addEventListener("click", function (event) {
@@ -296,7 +296,7 @@ function fourthQuestion() {
 //question 5
 function fifthQuestion() {
     console.log('fifth questions');
-    quizArea.textContent = "lorem ipsum dolor sit amet consectetur adipisicing elit";
+    quizArea.textContent = "The _______ method of an Array object adds and/or removes elements from an array.";
     Q5choice1.style.display = "block";
     Q5choice2.style.display = "block";
     Q5choice3.style.display = "block";
@@ -305,11 +305,11 @@ function fifthQuestion() {
     Q4choice2.style.display = "none";
     Q4choice3.style.display = "none";
     Q4choice4.style.display = "none";
-    Q5choice1.textContent = "sit";
-    Q5choice2.textContent = "dolor";
-    Q5choice3.textContent = "ipsem";
-    Q5choice4.textContent = "lorem";
-    var correctAnswer = Q5choice1;
+    Q5choice1.textContent = "Reverse";
+    Q5choice2.textContent = "Shift";
+    Q5choice3.textContent = "Slice";
+    Q5choice4.textContent = "Splice";
+    var correctAnswer = Q5choice4;
 
     //functions for clicking answers
     Q5choice1.addEventListener("click", function (event) {
@@ -489,6 +489,8 @@ clearScores.addEventListener('click', function(event){
     localStorage.clear();
     scoreList.textContent = ``;
     scoreVal.textContent = ``;
+    clearScores.style.display = 'none';
+    viewScores.style.display = 'none';
 })
 restartButton.addEventListener('click', function(event){
     initials=[];
