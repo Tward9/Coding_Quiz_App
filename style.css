@@ -1,3 +1,4 @@
+/* hides buttons until question functions run */
 #Q1choice1{
     display: none;
 }
@@ -66,6 +67,7 @@
     background-color: #66CCAA;
     padding: .5em;
 }
+/* shadow on hover for buttons */
 #startButton:hover{
     box-shadow: .25em .25em .25em #2b2d30;
 }
